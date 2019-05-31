@@ -139,7 +139,7 @@ public class CollectDemo {
         Map<Grade, Long> collect4 = students.stream().collect(Collectors.groupingBy(Student::getGrade, Collectors.counting()));
         MapUtils.verbosePrint(System.out, "班级学生个数的列表：", collect4);
 
-
+        
     }
 
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		// 初始化, 参数为url
+		// 依赖H5
+		var sse = new EventSource("SSE");
+
+		sse.onmessage = function(e) {
+			console.log("message", e.data, e);
+		}
+
+		// 监听指定事件, (就不会进入onmessage了)
+		sse.addEventListener("me", function(e) {
+			console.log("me event", e.data);
+			// 如果不关闭,会自动重连
+			if (e.data == 3) {
+				sse.close();
+			}
+		});
+
+		// const source = new EventSource('http://192.168.20.14:2000');
+		//
+		// // 连接成功后会触发 open 事件
+		// source.addEventListener('open', () => {
+		// 	console.log('Connected');
+		// }, false);
+		//
+		// // 服务器发送信息到客户端时，如果没有 event 字段，默认会触发 message 事件
+		// source.addEventListener('message', e => {
+		// 	console.log(`data: ${ e.data }`);
+		// }, false);
+		//
+		// // 自定义 EventHandler，在收到 event 字段为 slide 的消息时触发
+		// source.addEventListener('slide', e => {
+		// 	console.log(`data: ${ e.data }`); // => data: 7
+		// }, false);
+	</script>
+</body>
+</html>

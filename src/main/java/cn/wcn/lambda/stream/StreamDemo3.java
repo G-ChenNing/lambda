@@ -1,5 +1,7 @@
 package cn.wcn.lambda.stream;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
@@ -25,6 +27,13 @@ public class StreamDemo3 {
         //limit使用，主要用于无限流
         new Random().ints().filter(i->i>100&&i<1000).limit(10).forEach(System.out::println);
 
+
+        List<Integer> ints = new ArrayList<>();
+        new Random().ints().filter(i->i>100&&i<1000).limit(10).forEach(li->{
+            System.out.println(li);
+            ints.add(li);
+        });
+        System.out.println(ints);
 
     }
 }

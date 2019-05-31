@@ -1,0 +1,10 @@
+server:
+  port: 8443
+  http-port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+#  ssl:
+#    enabled: true
+#    key-store: wcn.jks
+#    key-store-password: 1bVg1b91
+#    key-store-type: JKS

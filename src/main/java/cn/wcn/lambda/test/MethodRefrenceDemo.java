@@ -23,6 +23,10 @@ public class MethodRefrenceDemo {
         dog = null;
         System.out.println("还剩下" + function.applyAsInt(2) + "斤");
 //
+        dog = new Dog();
+        dog.eat(3);
+
+
         //使用类名来方法引用
         BiFunction<Dog,Integer,Integer> biFunction = Dog::eat;
         System.out.println("还剩下" + biFunction.apply(dog, 2) + "斤");
@@ -36,14 +40,14 @@ public class MethodRefrenceDemo {
         System.out.println("创建了新对象： " + function1.apply("旺财"));
 
         List<String> list = new ArrayList<>();
-        OrderOfObjectsAfterGCMain.printAddresses("1", list);
+        //OrderOfObjectsAfterGCMain.printAddresses("1", list);
         test(list);
         System.out.println(list);
 //
 //
 //
 //        String s = "1";
-//        OrderOfObjectsAfterGCMain.printAddresses("4", s);
+//        //OrderOfObjectsAfterGCMain.printAddresses("4", s);
 //        test(s);
 //        System.out.println(Integer.toHexString(s.hashCode()));
 //        Dog dog1 = new Dog();
@@ -52,7 +56,7 @@ public class MethodRefrenceDemo {
     }
 
     private static void test(List<String> list) {
-        OrderOfObjectsAfterGCMain.printAddresses("2", list);
+        //OrderOfObjectsAfterGCMain.printAddresses("2", list);
         list.add("1");
         list.add("1");
         List<String> list2 = new ArrayList<>();
@@ -61,7 +65,7 @@ public class MethodRefrenceDemo {
     }
 
     private static void test(String str) {
-        OrderOfObjectsAfterGCMain.printAddresses("3", str);
+        //OrderOfObjectsAfterGCMain.printAddresses("3", str);
         str = "123";
 
     }
