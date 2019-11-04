@@ -9,7 +9,10 @@
 	<script type="text/javascript">
 		// 初始化, 参数为url
 		// 依赖H5
-		var sse = new EventSource("SSE");
+		// var sse = new EventSource("SSE");
+		// var sse = new EventSource("http://192.168.20.88:8077/cmd/SSE");
+		var sse = new EventSource("http://192.168.30.16:8760/envir/cmd/SSE");
+		// var sse = new EventSource("http://192.168.20.88:8080/servlet_war_exploded/SSE");
 
 		sse.onmessage = function(e) {
 			console.log("message", e.data, e);

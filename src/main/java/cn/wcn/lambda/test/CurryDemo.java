@@ -19,12 +19,12 @@ public class CurryDemo {
         //高阶函数，返回函数的函数
         int[] nums = {2, 3, 4};
         Function f = fun2;
-        for (int i = 0; i < nums.length; i++) {
+        for (int num : nums) {
             if (f instanceof Function) {
-                Object obj = f.apply(nums[i]);
+                Object obj = f.apply(num);
                 if (obj instanceof Function) {
                     f = (Function) obj;
-                }  else {
+                } else {
                     System.out.println("调用结束：结果为" + obj);
                 }
             }

@@ -11,7 +11,7 @@ public class StreamDemo3 {
         String str = "My name is 007";
 
         //把每个单词的长度打印出来
-        Stream.of(str.split(" ")).filter(s->s.length()>2).map(s -> s.length()).forEach(System.out::println);
+        Stream.of(str.split(" ")).filter(s->s.length()>2).map(String::length).forEach(System.out::println);
 
         //flatMap A->B属性（是个集合）,最终得到所有A元素里面的所有B属性
         Stream.of(str.split(" ")).flatMap(s -> s.chars().boxed()).forEach(

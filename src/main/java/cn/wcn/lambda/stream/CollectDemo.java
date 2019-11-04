@@ -129,7 +129,7 @@ public class CollectDemo {
         // 分块
         Map<Boolean, List<Student>> collectx = students.stream().collect(Collectors.partitioningBy(s -> s.getGender() == Gender.MALE));
 //        System.out.println("男女学生列表：" + collect2);
-        MapUtils.verbosePrint(System.out, "男女学生列表：", collectx);
+        MapUtils.verbosePrint(System.out, "男女学生列表：", collectx);                                                     
 
         // 分组
         Map<Grade, List<Student>> collect3 = students.stream().collect(Collectors.groupingBy(Student::getGrade));
